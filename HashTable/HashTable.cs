@@ -10,24 +10,40 @@ namespace Implementations
         {
             numbers = new Hashtable();
         }
-        public void insert(string numKey, string Val)
+
+        /*  Inserts values into hash table
+         *  INPUT: takes a string for both the key and value         
+         */
+        public void Insert(string Key, string Val)
         {
-            numbers.Add(numKey, Val);
+            numbers.Add(Key, Val);
         }
-        public Boolean remove(string numKey)
+
+        /* Checks if key is in hash table and removes it
+         * INPUT: a string for the key in the hash table
+         * OUTPUT: returns true if key found and removed
+         *         false if key not found
+         */
+        public Boolean Remove(string Key)
         {
-            if (numbers.Contains(numKey))
+            if (numbers.Contains(Key))
             {
-                numbers.Remove(numKey);
+                numbers.Remove(Key);
                 return true;
             }
             return false;
         }
-        public string getVal(string numKey)
+
+        /* Checks if key in hash table, then returns corresponding value
+         * INPUT: a string for the key
+         * OUTPUT: the value corresponding to the input string or a generic
+         *      message if key not found
+         */
+        public string GetVal(string Key)
         {
-            if(numbers.Contains(numKey))
+            if(numbers.Contains(Key))
             {
-                return (string)numbers[numKey];
+                return (string)numbers[Key];
             }
             return "No value with that key";
         }
